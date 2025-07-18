@@ -1,0 +1,367 @@
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Estilos globais e redefinições para remover scroll da página principal */
+html, body {
+    min-height: 100vh; 
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-size: 200% 200%; 
+    animation: nebula-background 250s ease infinite alternate; 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/fundo.png);
+}
+
+/* Animação de fundo para o corpo (efeito nebulosa) */
+@keyframes nebula-background {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Estilos para o modo escuro */
+body.dark { 
+    background-size: 200% 200%; 
+    animation: nebula-background 250s ease infinite alternate; 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/fundo.png);
+}
+
+/* Estilos do cabeçalho */
+header h1 {
+    background-image: linear-gradient(45deg, #4299e1, #805ad5, #e14299, #5ad580); 
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    display: inline-block; 
+    animation: animated-gradient 7s ease infinite alternate; 
+}
+
+/* Animação para o gradiente do título */
+@keyframes animated-gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Garante que o ícone no cabeçalho não receba o gradiente */
+.header-icon {
+    -webkit-text-fill-color: initial; 
+    color: #4299e1; 
+    background-image: none;
+}
+
+/* Estilos para o container principal do chat */
+.chat-container {
+    flex-grow: 1; 
+    display: flex; 
+    flex-direction: column; 
+    overflow: hidden; 
+    min-height: 300px;
+}
+
+/* Estilos para a área de mensagens */
+#chat-messages {
+    height: 60vh;            /* ou outro valor fixo adequado ao seu layout */
+    overflow-y: auto;         /* ativa a rolagem vertical */          
+    scroll-behavior: smooth;  /* rolagem suave ao adicionar mensagens */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos para a barra de rolagem personalizada */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Modo escuro para a barra de rolagem */
+body.dark .custom-scrollbar::-webkit-scrollbar-track { 
+    background: #2d3748;
+}
+
+body.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #4a5568;
+}
+
+body.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover { 
+    background: #6b7280;
+}
+
+/* Estilos para bolhas de mensagem */
+.message-bubble {
+    border-radius: 0.75rem; 
+    padding: 0.75rem 1rem; 
+    font-size: 1rem;
+    line-height: 1.5;
+    word-wrap: break-word; 
+    white-space: pre-wrap; 
+}
+
+.user-message .message-bubble {
+    background-color: #e0f2fe;
+    color: #1e40af; 
+    align-self: flex-end; 
+}
+
+.bot-message .message-bubble {
+    background-color: #2563eb; 
+    color: #ffffff; 
+    align-self: flex-start; 
+}
+
+/* Avatar do bot */
+.bot-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #cbd5e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    overflow: hidden; 
+}
+
+body.dark .bot-avatar {
+    background-color: #4a5568;
+}
+
+/* Estilos para o input de chat */
+.chat-input-area {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f9fafb; 
+    border-top: 1px solid #e5e7eb; 
+}
+
+body.dark .chat-input-area { 
+    background-color: #1a202c;
+    border-color: #2d3748;
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem; 
+    background-color: #ffffff;
+    color: #1f2937;
+}
+
+body.dark #user-input { 
+    background-color: #2d3748;
+    border-color: #4a5568;
+    color: #e2e8f0;
+}
+
+#user-input:focus {
+    outline: none;
+    border-color: #3b82f6; 
+}
+
+/* Estilos para o botão de envio */
+#send-button {
+    margin-left: 0.75rem; 
+    padding: 0.75rem 1.5rem; 
+    background-color: #2563eb;
+    color: #ffffff;
+    border-radius: 0.5rem; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease-in-out;
+}
+
+#send-button:hover {
+    background-color: #1d4ed8;
+}
+
+/* Estilos para o indicador de digitação */
+#typing-indicator {
+    padding: 1rem;
+    color: #6b7280; 
+}
+
+body.dark #typing-indicator {
+    color: #9ca3af;
+}
+
+/* Animação de pontos para o indicador de digitação */
+.dot-animation {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    animation: typing-dots 1.5s infinite steps(3, end);
+    width: 1.5em; 
+}
+
+@keyframes typing-dots {
+    0% { width: 0em; }
+    33% { width: 0.5em; }
+    66% { width: 1em; }
+    100% { width: 1.5em; }
+}
+
+/* Estilos para o overlay de transição (efeito de bug/glitch) */
+.transition-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    pointer-events: none; 
+    z-index: 1000; 
+    transition: background-color 0.5s ease-out; 
+}
+
+/* Efeito de glitch para o bot original/sem-graça */
+.transition-overlay.glitch-active {
+    animation: glitch-effect 0.9s linear forwards;
+}
+
+@keyframes glitch-effect {
+    0% {
+        background-color: rgba(255, 0, 0, 0.2); /* Vermelho */
+        transform: translate(0);
+    }
+    25% {
+        background-color: rgba(0, 255, 0, 0.2); /* Verde */
+        transform: translate(-5px, 5px);
+    }
+    50% {
+        background-color: rgba(0, 0, 255, 0.2); /* Azul */
+        transform: translate(5px, -5px);
+    }
+    75% {
+        background-color: rgba(255, 255, 0, 0.2); /* Amarelo */
+        transform: translate(-5px, -5px);
+    }
+    100% {
+        background-color: transparent;
+        transform: translate(0);
+    }
+}
+
+/* Efeito para o bot entediado */
+.transition-overlay.bored-active {
+    background-color: rgba(214, 20, 101, 0.645);
+    animation: bored-fade-out 0.9s ease-out forwards;
+}
+
+@keyframes bored-fade-out {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Efeito para o bot filósofo */
+.transition-overlay.philosophical-active {
+    background: radial-gradient(circle, rgba(70, 0, 100, 0.3) 0%, rgba(0, 0, 0, 0.5) 100%); /* Gradiente radial escuro */
+    animation: philosophical-pulse 0.9s ease-out forwards;
+}
+
+@keyframes philosophical-pulse {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.2); }
+}
+
+/* Estilos para o modal de GIF/Imagem e Publicidade/Sugestões */
+.fixed.inset-0 {
+    z-index: 2000; /* Garante que os modais estejam acima de tudo */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    visibility: hidden;
+}
+
+.fixed.inset-0.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.fixed.inset-0 > div { /* O conteúdo do modal */
+    transform: translateY(20px);
+    transition: transform 0.3s ease-in-out;
+}
+
+.fixed.inset-0.show > div {
+    transform: translateY(0);
+}
+
+/* Estilos responsivos para telas menores */
+@media (max-width: 767px) {
+    .flex-wrap {
+        flex-direction: column; 
+        align-items: stretch;
+        gap: 0.5rem; 
+        margin-bottom: 0.75rem; 
+    }
+
+    .flex-wrap > div, .flex-wrap button {
+        width: 100%; 
+        justify-content: center;
+    }
+
+    .chat-input-area {
+        flex-direction: column; 
+        align-items: stretch;
+        padding: 0.75rem;
+    }
+
+    #user-input {
+        margin-bottom: 0.5rem; 
+        width: 100%;
+        padding: 0.75rem;
+    }
+
+    #send-button {
+        margin-left: 0; 
+        width: 100%; 
+        padding: 0.75rem 1.5rem; 
+    }
+
+    .message-bubble {
+        max-width: 90%; 
+        padding: 0.6rem 0.8rem;
+        font-size: 0.95rem;
+    }
+
+    .bot-avatar {
+        width: 28px;
+        height: 28px;
+        font-size: 1rem;
+    }
+
+    /* Ajuste para a navegação em dispositivos móveis */
+    nav {
+        height: auto; 
+        max-height: 80vh; 
+    }
+
+    .md\:w-1\/4.flex-col > .mt-auto {
+        margin-top: 1.5rem !important; 
+        padding-top: 1rem; 
+    }
+}
