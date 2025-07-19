@@ -1,5 +1,6 @@
 /* Estilos globais e redefinições para remover scroll da página principal */
-html, body {
+html,
+body {
     min-height: 100vh;
     overflow-x: hidden;
     margin: 0;
@@ -17,9 +18,17 @@ body {
 
 /* Animação de fundo para o corpo (efeito nebulosa) */
 @keyframes nebula-background {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* Estilos para o modo escuro */
@@ -43,9 +52,17 @@ header h1 {
 
 /* Animação para o gradiente do título */
 @keyframes animated-gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* Garante que o ícone no cabeçalho não receba o gradiente */
@@ -65,8 +82,10 @@ header h1 {
 
 /* Estilos para a área de mensagens */
 #chat-messages {
-    overflow-y: auto;         /* ativa a rolagem vertical */
-    scroll-behavior: smooth;  /* rolagem suave ao adicionar mensagens */
+    overflow-y: auto;
+    /* ativa a rolagem vertical */
+    scroll-behavior: smooth;
+    /* rolagem suave ao adicionar mensagens */
     display: flex;
     flex-direction: column;
 }
@@ -193,10 +212,21 @@ body.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
 }
 
 @keyframes typing-dots {
-    0% { width: 0em; }
-    33% { width: 0.5em; }
-    66% { width: 1em; }
-    100% { width: 1.5em; }
+    0% {
+        width: 0em;
+    }
+
+    33% {
+        width: 0.5em;
+    }
+
+    66% {
+        width: 1em;
+    }
+
+    100% {
+        width: 1.5em;
+    }
 }
 
 /* Estilos para o overlay de transição (efeito de bug/glitch) */
@@ -219,21 +249,29 @@ body.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
 
 @keyframes glitch-effect {
     0% {
-        background-color: rgba(255, 0, 0, 0.2); /* Vermelho */
+        background-color: rgba(255, 0, 0, 0.2);
+        /* Vermelho */
         transform: translate(0);
     }
+
     25% {
-        background-color: rgba(0, 255, 0, 0.2); /* Verde */
+        background-color: rgba(0, 255, 0, 0.2);
+        /* Verde */
         transform: translate(-5px, 5px);
     }
+
     50% {
-        background-color: rgba(0, 0, 255, 0.2); /* Azul */
+        background-color: rgba(0, 0, 255, 0.2);
+        /* Azul */
         transform: translate(5px, -5px);
     }
+
     75% {
-        background-color: rgba(255, 255, 0, 0.2); /* Amarelo */
+        background-color: rgba(255, 255, 0, 0.2);
+        /* Amarelo */
         transform: translate(-5px, -5px);
     }
+
     100% {
         background-color: transparent;
         transform: translate(0);
@@ -247,24 +285,38 @@ body.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
 }
 
 @keyframes bored-fade-out {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 /* Efeito para o bot filósofo */
 .transition-overlay.philosophical-active {
-    background: radial-gradient(circle, rgba(70, 0, 100, 0.3) 0%, rgba(0, 0, 0, 0.5) 100%); /* Gradiente radial escuro */
+    background: radial-gradient(circle, rgba(70, 0, 100, 0.3) 0%, rgba(0, 0, 0, 0.5) 100%);
+    /* Gradiente radial escuro */
     animation: philosophical-pulse 0.9s ease-out forwards;
 }
 
 @keyframes philosophical-pulse {
-    0% { opacity: 1; transform: scale(1); }
-    100% { opacity: 0; transform: scale(1.2); }
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
 }
 
 /* Estilos para o modal de GIF/Imagem e Publicidade/Sugestões */
 .fixed.inset-0 {
-    z-index: 2000; /* Garante que os modais estejam acima de tudo */
+    z-index: 2000;
+    /* Garante que os modais estejam acima de tudo */
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
     visibility: hidden;
@@ -275,12 +327,13 @@ body.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     visibility: visible;
 }
 
-.fixed.inset-0 > div { /* O conteúdo do modal */
+.fixed.inset-0>div {
+    /* O conteúdo do modal */
     transform: translateY(20px);
     transition: transform 0.3s ease-in-out;
 }
 
-.fixed.inset-0.show > div {
+.fixed.inset-0.show>div {
     transform: translateY(0);
 }
 
@@ -293,9 +346,14 @@ body.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
         margin-bottom: 0.75rem;
     }
 
-    .flex-wrap > div, .flex-wrap button {
+    .flex-wrap>div,
+    .flex-wrap button {
         width: 100%;
         justify-content: center;
+    }
+
+    .chat-container {
+        height: 50vh;
     }
 
     .chat-input-area {
@@ -334,7 +392,7 @@ body.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
         max-height: 80vh;
     }
 
-    .md\:w-1\/4.flex-col > .mt-auto {
+    .md\:w-1\/4.flex-col>.mt-auto {
         margin-top: 1.5rem !important;
         padding-top: 1rem;
     }
@@ -343,27 +401,94 @@ body.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
 /* --- Estilos do Modo Escuro --- */
 /* Estes seletores agora são ativados pela classe .dark no body */
 
-body.dark .dark\:text-blue-400 { color: #60a5fa; }
-body.dark .dark\:bg-gray-800 { background-color: #2d3748; }
-body.dark .dark\:text-gray-200 { color: #e2e8f0; }
-body.dark .dark\:bg-gray-700 { background-color: #4a5568; }
-body.dark .dark\:text-white { color: #ffffff; }
-body.dark .dark\:hover\:bg-gray-600:hover { background-color: #4a5568; }
-body.dark .dark\:border-gray-700 { border-color: #4a5568; }
-body.dark .dark\:text-gray-300 { color: #cbd5e0; }
-body.dark .dark\:text-gray-400 { color: #a0aec0; }
-body.dark .dark\:hover\:text-blue-500:hover { color: #60a5fa; }
-body.dark .dark\:hover\:text-white:hover { color: #ffffff; }
-body.dark .dark\:border-gray-600 { border-color: #4a5568; }
-body.dark .dark\:text-blue-500 { color: #3b82f6; }
-body.dark .dark\:bg-gray-400 { background-color: #9ca3af; }
-body.dark .dark\:bg-gray-700 { background-color: #4a5568; }
-body.dark .dark\:bg-gray-600 { background-color: #4a5568; }
-body.dark .dark\:border-gray-500 { border-color: #6b7280; }
-body.dark .dark\:hover\:text-gray-200:hover { color: #e2e8f0; }
+body.dark .dark\:text-blue-400 {
+    color: #60a5fa;
+}
+
+body.dark .dark\:bg-gray-800 {
+    background-color: #2d3748;
+}
+
+body.dark .dark\:text-gray-200 {
+    color: #e2e8f0;
+}
+
+body.dark .dark\:bg-gray-700 {
+    background-color: #4a5568;
+}
+
+body.dark .dark\:text-white {
+    color: #ffffff;
+}
+
+body.dark .dark\:hover\:bg-gray-600:hover {
+    background-color: #4a5568;
+}
+
+body.dark .dark\:border-gray-700 {
+    border-color: #4a5568;
+}
+
+body.dark .dark\:text-gray-300 {
+    color: #cbd5e0;
+}
+
+body.dark .dark\:text-gray-400 {
+    color: #a0aec0;
+}
+
+body.dark .dark\:hover\:text-blue-500:hover {
+    color: #60a5fa;
+}
+
+body.dark .dark\:hover\:text-white:hover {
+    color: #ffffff;
+}
+
+body.dark .dark\:border-gray-600 {
+    border-color: #4a5568;
+}
+
+body.dark .dark\:text-blue-500 {
+    color: #3b82f6;
+}
+
+body.dark .dark\:bg-gray-400 {
+    background-color: #9ca3af;
+}
+
+body.dark .dark\:bg-gray-700 {
+    background-color: #4a5568;
+}
+
+body.dark .dark\:bg-gray-600 {
+    background-color: #4a5568;
+}
+
+body.dark .dark\:border-gray-500 {
+    border-color: #6b7280;
+}
+
+body.dark .dark\:hover\:text-gray-200:hover {
+    color: #e2e8f0;
+}
 
 /* Adicional: Regras originais que foram limpas, mas que são cobertas pelas de cima */
-body.dark .bot-avatar { background-color: #4a5568; }
-body.dark .chat-input-area { background-color: #1a202c; border-color: #2d3748; }
-body.dark #user-input { background-color: #2d3748; border-color: #4a5568; color: #e2e8f0; }
-body.dark #typing-indicator { color: #9ca3af; }
+body.dark .bot-avatar {
+    background-color: #4a5568;
+}
+
+body.dark .chat-input-area {
+    background-color: #1a202c;
+    border-color: #2d3748;
+}
+
+body.dark #user-input {
+    background-color: #2d3748;
+    border-color: #4a5568;
+    color: #e2e8f0;
+}
+
+body.dark #typing-indicator {
+    color: #9ca3af;
+}
