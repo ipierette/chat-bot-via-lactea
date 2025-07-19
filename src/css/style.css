@@ -15,9 +15,9 @@ body {
     font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-size: 200% 200%; 
-    animation: nebula-background 250s ease infinite alternate; 
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/fundo.png);
+    background-size: 150% 200%; 
+    animation: nebula-background 200s ease infinite alternate; 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../images/fundo.jpg);
 }
 
 /* Animação de fundo para o corpo (efeito nebulosa) */
@@ -29,9 +29,9 @@ body {
 
 /* Estilos para o modo escuro */
 body.dark { 
-    background-size: 200% 200%; 
-    animation: nebula-background 250s ease infinite alternate; 
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/fundo.png);
+    background-size: 150% 200%; 
+    animation: nebula-background 200s ease infinite alternate; 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/fundo.jpg);
 }
 
 /* Estilos do cabeçalho */
@@ -70,7 +70,7 @@ header h1 {
 
 /* Estilos para a área de mensagens */
 #chat-messages {
-    height: 63vh;            /* ou outro valor fixo adequado ao seu layout */
+    height: 60vh;            /* ou outro valor fixo adequado ao seu layout */
     overflow-y: auto;         /* ativa a rolagem vertical */          
     scroll-behavior: smooth;  /* rolagem suave ao adicionar mensagens */
     display: flex;
