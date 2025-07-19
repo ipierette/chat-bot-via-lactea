@@ -61,17 +61,16 @@ header h1 {
 }
 
 /* Estilos para o container principal do chat */
-.chat-container {
-    flex-grow: 1; 
+.chat-container { 
     display: flex; 
     flex-direction: column; 
     overflow: hidden; 
-    min-height: 300px;
+    min-height: 40vh;
 }
 
 /* Estilos para a área de mensagens */
 #chat-messages {
-    height: 60vh;            /* ou outro valor fixo adequado ao seu layout */
+    height: 63vh;            /* ou outro valor fixo adequado ao seu layout */
     overflow-y: auto;         /* ativa a rolagem vertical */          
     scroll-behavior: smooth;  /* rolagem suave ao adicionar mensagens */
     display: flex;
