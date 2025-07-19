@@ -75,13 +75,13 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const pegadinhaGifUrls = {
         boring: {
-            desktop: '../src/images/pegadinha-boring.gif',
+            desktop: 'src/images/pegadinha-boring.gif',
         },
         bored: { 
-            desktop: '../src/images/pegadinha-bored.gif',
+            desktop: 'src/images/pegadinha-bored.gif',
         },
         philosophical: {
-            desktop: '../src/images/pegadinha-philosophical.gif',
+            desktop: 'src/images/pegadinha-philosophical.gif',
         }
     };
 
