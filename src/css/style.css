@@ -337,7 +337,6 @@ body.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     transform: translateY(0);
 }
 
-/* Estilos responsivos para telas menores */
 @media (max-width: 767px) {
     .flex-wrap {
         flex-direction: column;
