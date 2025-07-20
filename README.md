@@ -140,4 +140,6 @@ Preparei a base com `html2canvas` e `gif.js` para permitir geração de conteúd
 🔗 [LinkedIn](https://www.linkedin.com/in/izadora-cury-pierette-7a7754253/)  
 💻 [GitHub](https://github.com/ipierette)
 
+
+![LOGO MARCA](./src/images/logo300x100.svg)
 ---
