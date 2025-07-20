@@ -519,7 +519,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const containsContradiction = contradictionKeywords.some(keyword => lowerCaseMessage.includes(keyword)) &&
                                      (lowerCaseMessage.includes('nome') || lowerCaseMessage.includes('avatar') || lowerCaseMessage.includes('e.t') || lowerCaseMessage.includes('alien'));
         if (containsContradiction && !pegadinhaTriggered.boring) {
-            response = "Não sei do que você está falando, eu sou apenas um bot sem graça e minha pagina sempre foi assim se você viu algo diferente deve ter sido um raio globular ou sei lá, vamos mudar de assunto?";
+            response = "Não sei do que você está falando, eu sou apenas um bot sem graça e minha página sempre foi assim, se você viu algo diferente deve ter sido um raio globular ou sei lá, vamos mudar de assunto?";
             triggeredPegadinha = 'boring';
             return { responseText: response, triggeredPegadinha: triggeredPegadinha };
         }
@@ -899,6 +899,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Inicializa o estado do bot ao carregar a página
     applyBotState();
+
+    // Inicializa o estado do bot ao carregar a página
+    applyBotState();
+
+    // Adiciona a mensagem inicial do bot dinamicamente
+    addMessage('bot', "Olá! Pronto para discutir algumas verdades? Ou você prefere a versão fantasiosa dos fatos?");
 
     resetChatButton.addEventListener('click', () => {
         console.log('Botão de reset clicado'); // para teste no console

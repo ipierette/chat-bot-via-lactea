@@ -8,7 +8,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    
+    <link rel="stylesheet" href="./src/css/reset.css">
     <link rel="stylesheet" href="./src/css/style.css">
     <!-- para ser implementado futuramente -->
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
@@ -160,16 +161,7 @@
                     role="log" aria-live="polite">
                     <!-- Área de Exibição de Mensagens -->
                     <div id="chat-messages" class="flex-grow p-4 overflow-y-auto custom-scrollbar">
-                        <div class="message bot-message flex">
-                            <div class="bot-avatar flex-shrink-0 mr-3" aria-hidden="true">👽</div>
-                            <div class="flex flex-col max-w-[80%]">
-                                <span class="text-sm font-semibold text-gray-700 dark:text-black-300">Via-Láctea o
-                                    bot Simulador de Personalidade Cética</span>
-                                <div class="message-bubble p-2 rounded-lg bg-blue-600 text-white self-start">
-                                    <p>Olá! Pronto para discutir algumas verdades? Ou você prefere a versão fantasiosa dos fatos?</p>
-                                </div>
-                            </div>
-                        </div>
+                    <!-- Add message no JS -->
                     </div>
 
                     <!-- Indicador de Digitação do Bot -->

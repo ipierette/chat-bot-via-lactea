@@ -3,8 +3,6 @@ html,
 body {
     min-height: 100vh;
     overflow-x: hidden;
-    margin: 0;
-    padding: 0;
 }
 
 body {
@@ -74,7 +72,7 @@ header h1 {
 
 /* Estilos para o container principal do chat */
 .chat-container {
-    height: 35vh;
+    height: 31vh;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -338,6 +336,13 @@ body.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
 }
 
 @media (max-width: 767px) {
+    body {
+        background-size: cover; /* Faz a imagem cobrir toda a área, cortando se necessário */
+        /* OU */
+        /* background-size: 100% auto; */ /* Ajusta a largura para 100% e a altura automaticamente */
+        /* OU experimente valores como 200% auto; se quiser mais da animação */
+    }
+
     .flex-wrap {
         flex-direction: column;
         align-items: stretch;
