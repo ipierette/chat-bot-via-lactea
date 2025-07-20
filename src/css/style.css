@@ -72,7 +72,7 @@ header h1 {
 
 /* Estilos para o container principal do chat */
 .chat-container {
-    height: 31vh;
+    height: 39vh;
     display: flex;
     flex-direction: column;
     overflow: hidden;
