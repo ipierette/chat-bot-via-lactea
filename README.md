@@ -58,7 +58,8 @@ O **Chatbot Cético** é um simulador de conversa com um bot sarcástico que reb
 ## 🖼️ Preview
 
 > 💻 Versão Desktop | 📱 Totalmente Responsivo  
-![Preview Estático](./src/images/imagem-estatica.png)
+![Preview Estático desktop](./src/images/imagem-estatica.png)
+![Preview Estático mobile](./src/images/imagem-estatica-mobile.png)
 
 ---
 
@@ -66,7 +67,7 @@ O **Chatbot Cético** é um simulador de conversa com um bot sarcástico que reb
 
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/sua-conta/chatbot-cetico.git
+   git clone https://github.com/ipierette/chat-bot-via-lactea
    cd chatbot-cetico
    ```
 
