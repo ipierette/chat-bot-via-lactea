@@ -1004,25 +1004,32 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Event Listener para o botão de modo escuro
-  darkModeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark"); // ALTERADO: de 'dark-mode' para 'dark'
-    // Opcional: Salvar a preferência do utilizador no localStorage
-    if (document.body.classList.contains("dark")) {
-      // ALTERADO: de 'dark-mode' para 'dark'
-      localStorage.setItem("theme", "dark");
-    } else {
-      localStorage.setItem("theme", "light");
-    }
-    updateDarkModeButton(); // Chama a função para atualizar o texto do botão
-  });
+darkModeToggle.addEventListener("click", () => {
+  // Alterna no <html> (Tailwind) e no <body> (seu CSS custom)
+  document.documentElement.classList.toggle("dark");
+  document.body.classList.toggle("dark");
+
+  const isDark = document.documentElement.classList.contains("dark");
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+  updateDarkModeButton();
+});
 
   // Opcional: Carregar o tema preferido do utilizador ao carregar a página
   const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
-    document.body.classList.add("dark"); // ALTERADO: de 'dark-mode' para 'dark'
-  }
-  // Chame updateDarkModeButton aqui também para garantir que o texto do botão esteja correto ao carregar a página
-  updateDarkModeButton();
+
+// Se quiser respeitar o sistema quando não houver escolha salva:
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const initialDark = savedTheme ? savedTheme === "dark" : prefersDark;
+
+if (initialDark) {
+  document.documentElement.classList.add("dark");
+  document.body.classList.add("dark");
+} else {
+  document.documentElement.classList.remove("dark");
+  document.body.classList.remove("dark");
+}
+
+updateDarkModeButton();
 
   // Adicionar um ouvinte de evento para o seletor de personalidade (se precisar de mais personalidades no futuro)
   personalitySelect.addEventListener("change", (event) => {
